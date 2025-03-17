@@ -51,8 +51,12 @@ jobs:
                      -exportPath output \
                      -allowProvisioningUpdates
 
+      - name: List Output Directory (Debugging)
+        run: ls -la output/
+
       - name: Upload IPA
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: JARVIS.ipa
           path: output/
+          retention-days: 7
