@@ -1,0 +1,83 @@
+
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    objectVersion = 46;
+    rootObject = PROJECT_MAIN;
+
+    objects = {
+        PROJECT_MAIN = {
+            isa = PBXProject;
+            attributes = {
+                LastUpgradeCheck = 1200;
+                TargetAttributes = {
+                    TARGET_MAIN = {
+                        CreatedOnToolsVersion = 12.0;
+                    };
+                };
+            };
+            buildConfigurationList = BUILD_CONFIG_MAIN;
+            compatibilityVersion = "Xcode 12.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en
+            );
+            mainGroup = MAIN_GROUP;
+            targets = (
+                TARGET_MAIN
+            );
+        };
+
+        MAIN_GROUP = {
+            isa = PBXGroup;
+            children = (
+                SOURCE_GROUP,
+                INFO_PLIST
+            );
+            sourceTree = "<group>";
+        };
+
+        SOURCE_GROUP = {
+            isa = PBXGroup;
+            children = ();
+            path = "JARVIS";
+            sourceTree = "<group>";
+        };
+
+        INFO_PLIST = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            path = "JARVIS/Info.plist";
+            sourceTree = "<group>";
+        };
+
+        BUILD_CONFIG_MAIN = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                BUILD_DEBUG,
+                BUILD_RELEASE
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+
+        BUILD_DEBUG = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                PRODUCT_NAME = "JARVIS";
+                CODE_SIGN_STYLE = Automatic;
+            };
+            name = Debug;
+        };
+
+        BUILD_RELEASE = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                PRODUCT_NAME = "JARVIS";
+                CODE_SIGN_STYLE = Automatic;
+            };
+            name = Release;
+        };
+    };
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleDisplayName</key>
+    <string>JARVIS</string>
+    <key>CFBundleExecutable</key>
+    <string>JARVIS</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.yourdomain.JARVIS</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>JARVIS</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Este asistente necesita acceso al micrófono para procesar comandos de voz.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Este asistente necesita acceso a la función de reconocimiento de voz para entender comandos.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+        <string>voice</string>
+    </array>
+</dict>
+</plist>
