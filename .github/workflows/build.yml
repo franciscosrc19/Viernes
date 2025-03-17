@@ -13,22 +13,40 @@ jobs:
       - name: Set Up Xcode
         run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
+      - name: Install Dependencies (if needed)
+        run: |
+          cd JARVIS
+          if [ -f "Podfile" ]; then
+            pod install
+          fi
+
       - name: Build IPA
         run: |
-          xcodebuild -scheme JARVIS \
-                     -sdk iphoneos \
-                     -configuration Release \
-                     archive -archivePath JARVIS.xcarchive
+          if [ -f "JARVIS.xcworkspace" ]; then
+            xcodebuild -workspace JARVIS.xcworkspace \
+                       -scheme JARVIS \
+                       -sdk iphoneos \
+                       -configuration Release \
+                       archive -archivePath JARVIS.xcarchive
+          else
+            xcodebuild -project JARVIS.xcodeproj \
+                       -scheme JARVIS \
+                       -sdk iphoneos \
+                       -configuration Release \
+                       archive -archivePath JARVIS.xcarchive
+          fi
 
       - name: Export IPA
         run: |
+          mkdir -p output
           xcodebuild -exportArchive \
                      -archivePath JARVIS.xcarchive \
-                     -exportPath ./output \
+                     -exportOptionsPlist ExportOptions.plist \
+                     -exportPath output \
                      -allowProvisioningUpdates
 
       - name: Upload IPA
         uses: actions/upload-artifact@v3
         with:
-          name: JARVIS.ipa
-          path: ./output/JARVIS.ipa
+          name: JARVIS-IPA
+          path: output/
